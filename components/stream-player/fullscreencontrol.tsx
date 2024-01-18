@@ -16,12 +16,13 @@ export default function FullScreenControl({
 } : FullScreenControlProps){
 
     const label = isFullScreen ? "Exit fullscreen" : "Enter fullscreen"
+    const Icon = isFullScreen ? Maximize : Minimize;
     return (
         <div>
             <TooltipProvider>
                 <Tooltip>
                     <TooltipTrigger asChild>
-                    <Button variant="outline">Hover</Button>
+                    <Button onClick={onToggel} variant="outline"><Icon /></Button>
                     </TooltipTrigger>
                     <TooltipContent>
                         <p>{label}</p>
